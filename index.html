@@ -1295,19 +1295,19 @@
                 image: 'ceh.png',
                 description: 'Certified Ethical Hacker demonstrating expertise in offensive security testing, penetration testing, and ethical hacking methodologies. Comprehensive penetration testing techniques, vulnerability assessment, and security analysis. Credential ID: ECC3817509462'
             },
+            cpa: {
+                title: 'CPA: Programming Essentials in C++',
+                issuer: 'Cisco Networking Academy',
+                date: 'Nov 2022 - Jan 2023',
+                image: 'cpp_associate.png',
+                description: 'Strong C++ programming foundation. Core concepts, syntax, problem-solving, and object-oriented programming. Prepares for CPA - C++ Certified Associate Programmer certification.'
+            },
             ccna: {
                 title: 'Networking Devices & Initial Configuration',
                 issuer: 'Cisco Networking Academy',
                 date: 'Oct 15, 2024',
                 image: 'networking.png',
                 description: 'Network design components, decimal/binary/hexadecimal conversions, Ethernet operations in switched networks, DNS/DHCP services, ARP protocols, transport layer communications, and Cisco IOS device configuration. Foundation for network infrastructure security.'
-            },
-            python1: {
-                title: 'Python Essentials 1',
-                issuer: 'Cisco & OpenEDG',
-                date: 'Mar 21, 2025',
-                image: 'python1.png',
-                description: 'Design, develop, debug, and execute Python 3 programs. Python Standard Library syntax, algorithmic thinking, and software development process. Prerequisite for PCEP - Certified Entry-Level Python Programmer.'
             },
             python2: {
                 title: 'Python Essentials 2',
@@ -1322,12 +1322,6 @@
                 date: 'Jan 18, 2023',
                 image: 'html.png',
                 description: 'Hands-on web development project building portfolio websites. Front-end development skills in responsive design and web application deployment. Applicable to security tool development and documentation.'
-            },
-            cybersecurity: {
-                title: 'Introduction to Cybersecurity',
-                issuer: 'Cisco Networking Academy',
-                date: 'Mar 4, 2023',
-                description: 'Cybersecurity fundamentals: online safety, cyber threats and attacks, vulnerability protection, organizational defense mechanisms, and career pathways in cybersecurity. Entry-level foundation course.'
             },
             netdefense: {
                 title: 'Network Defense',
@@ -1378,13 +1372,6 @@
                 image: 'ethical_hacker.png',
                 description: 'Practical penetration testing and vulnerability assessment knowledge. Identify, exploit, and mitigate security flaws. Ethical hacking methodologies, legal frameworks, and responsible defense strengthening.'
             },
-            netsupport: {
-                title: 'Network Support and Security',
-                issuer: 'Riphah/Cisco Academy',
-                date: 'Apr 21, 2025',
-                image: 'netsupport.png',
-                description: 'Network troubleshooting, support protocols, and security integration. Comprehensive network support with security awareness and incident handling.'
-            },
             endpoint: {
                 title: 'Endpoint Security',
                 issuer: 'Riphah/Cisco Academy',
@@ -1392,22 +1379,11 @@
                 image: 'endpoint.png',
                 description: 'Device protection against cyber threats. Securing endpoints, antivirus configuration, intrusion prevention, access controls, and policy application for desktops, laptops, and mobile devices.'
             },
-            cpp_associate: {
-                title: 'CPA: Programming Essentials in C++',
-                issuer: 'Cisco Networking Academy',
-                date: 'Nov 2022 - Jan 2023',
-                description: 'Strong C++ programming foundation. Core concepts, syntax, problem-solving, and object-oriented programming. Prepares for CPA - C++ Certified Associate Programmer certification.'
-            },
-            ethical_hacking_ehe: {
-                title: 'Ethical Hacking Essentials (EHE)',
-                issuer: 'EC-Council via Coursera',
-                date: 'Apr 2023',
-                description: 'Foundational ethical hacking and cybersecurity. Penetration testing, vulnerability assessment, attack vectors, defense strategies, legal frameworks, and responsible practices.'
-            },
             data_privacy: {
                 title: 'Data Privacy Fundamentals',
                 issuer: 'Cognative',
                 date: 'Oct 2024 - Oct 2025',
+                image: 'data_privacy.png',
                 description: 'Data privacy principles and safeguarding strategies. Privacy laws, ethical practices, compliance requirements, consent management, and risk mitigation. Privacy awareness frameworks.'
             }
         };
@@ -1417,7 +1393,8 @@
             const certGrid = document.getElementById('certGrid');
             if (!certGrid) return;
 
-            const certOrder = ['ceh', 'ccna', 'python1', 'python2', 'htmlcss', 'cybersecurity', 'netdefense', 'cpp', 'linux', 'gdpr', 'mongodb', 'iso27001', 'ethical_hacker_cisco', 'netsupport', 'endpoint', 'cpp_associate', 'ethical_hacking_ehe', 'data_privacy'];
+            // Only show unique certs, one per course provider
+            const certOrder = ['ceh', 'ccna', 'python2', 'htmlcss', 'netdefense', 'cpp', 'linux', 'gdpr', 'mongodb', 'iso27001', 'ethical_hacker_cisco', 'endpoint', 'cpa', 'data_privacy'];
 
             certOrder.forEach((certId, index) => {
                 const cert = certDetails[certId];
