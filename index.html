@@ -535,7 +535,84 @@
             font-weight: bold;
         }
 
+        /* Experience Section */
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-header h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .exp-company {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .exp-period {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .exp-location {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .exp-description, .exp-details {
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .exp-details ul {
+            margin: 0.5rem 0;
+            padding: 0;
+        }
+
+        .exp-details li {
+            margin-bottom: 0.4rem;
+        }
+
         @media (max-width: 768px) {
+            .exp-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
             .modal-content {
                 max-width: 95%;
                 padding: 1.5rem;
@@ -555,6 +632,7 @@
                 <a href="#" class="logo">BAK</a>
                 <ul class="nav-links">
                     <li><a href="#publications">Publications</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#education">Education</a></li>
@@ -637,6 +715,65 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-card fade-in delay-1">
+                    <div class="exp-header">
+                        <h3>Jr. Security Engineer</h3>
+                        <span class="exp-company">Enabling Systems</span>
+                    </div>
+                    <p class="exp-period">May 2026 - Present • 6 months</p>
+                    <p class="exp-location">🏢 Rawalpindi, Punjab, Pakistan • On-site</p>
+                    <p class="exp-description">Security engineering role focusing on enterprise security operations, threat detection, and infrastructure security assessments. Working with modern security frameworks and implementing security controls across organizational systems.</p>
+                </div>
+
+                <div class="experience-card fade-in delay-2">
+                    <div class="exp-header">
+                        <h3>SOC Analyst Intern</h3>
+                        <span class="exp-company">ITButler E-Services | Darktrace Official MSSP Partner</span>
+                    </div>
+                    <p class="exp-period">Jun 2026 - Aug 2026 • 3 months</p>
+                    <p class="exp-location">🏢 Islamabad, Pakistan • On-site</p>
+                    <div class="exp-details">
+                        <strong>Key Responsibilities:</strong>
+                        <ul style="margin-left: 1.5rem; color: var(--text-light);">
+                            <li>Conducted in-depth analysis of security incidents and threats</li>
+                            <li>Assisted in implementing security measures and protocols</li>
+                            <li>Monitored security events using SIEM tools (Darktrace)</li>
+                            <li>Strengthened expertise in SOC operations and threat detection</li>
+                            <li>Supported incident response and threat investigation workflows</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card fade-in delay-3">
+                    <div class="exp-header">
+                        <h3>Penetration Tester</h3>
+                        <span class="exp-company">CFSS Cyber & Forensics Security Solutions</span>
+                    </div>
+                    <p class="exp-period">Jan 2024 - Feb 2024 • 2 months</p>
+                    <p class="exp-location">🌐 Remote</p>
+                    <div class="exp-details">
+                        <strong>Key Skills Demonstrated:</strong>
+                        <ul style="margin-left: 1.5rem; color: var(--text-light);">
+                            <li>Steganography: Data hiding and extraction techniques</li>
+                            <li>Subdomain reconnaissance & infrastructure analysis</li>
+                            <li>Network scanning & enumeration with Nmap</li>
+                            <li>Penetration testing (FTP, DVWA with Hydra brute-forcing)</li>
+                            <li>Phishing simulation and social engineering assessment</li>
+                            <li>Incident response planning & breach scenario simulation</li>
+                            <li>Wi-Fi security evaluation (WEP, WPA, WPA2, WPA3)</li>
+                            <li>CCTV security vulnerability assessment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills -->
     <section id="skills">
         <div class="container">
@@ -698,59 +835,24 @@
         <div class="container">
             <h2>Professional Certifications</h2>
             <div class="certifications-grid">
-                <div class="cert-card fade-in delay-1" onclick="openCertModal('ceh')">
-                    <div class="cert-icon">🔒</div>
-                    <h3>CEH (Certified Ethical Hacker)</h3>
-                    <p class="issuer">EC-Council</p>
-                </div>
-
-                <div class="cert-card fade-in delay-2" onclick="openCertModal('ccna')">
-                    <div class="cert-icon">🌐</div>
-                    <h3>Networking Devices & Configuration</h3>
-                    <p class="issuer">Cisco Networking Academy</p>
-                </div>
-
-                <div class="cert-card fade-in delay-3" onclick="openCertModal('python')">
-                    <div class="cert-icon">🐍</div>
-                    <h3>Python Essentials 1 & 2</h3>
-                    <p class="issuer">OpenEDG & Cisco Academy</p>
-                </div>
-
-                <div class="cert-card fade-in delay-1" onclick="openCertModal('datascience')">
-                    <div class="cert-icon">🌐</div>
-                    <h3>HTML & CSS Portfolio Project</h3>
-                    <p class="issuer">Coursera Project Network</p>
-                </div>
-
-                <div class="cert-card fade-in delay-2" onclick="openCertModal('cybersecurity')">
-                    <div class="cert-icon">🛡️</div>
-                    <h3>Introduction to Cybersecurity</h3>
-                    <p class="issuer">Cisco Networking Academy</p>
-                </div>
-
-                <div class="cert-card fade-in delay-3" onclick="openCertModal('database')">
-                    <div class="cert-icon">🔐</div>
-                    <h3>Network Defense</h3>
-                    <p class="issuer">Cisco Networking Academy</p>
-                </div>
-
-                <div class="cert-card fade-in delay-1" onclick="openCertModal('cpp')">
-                    <div class="cert-icon">⚙️</div>
-                    <h3>C++ Basics: Selection & Iteration</h3>
-                    <p class="issuer">Coursera & Codio</p>
-                </div>
-
-                <div class="cert-card fade-in delay-2" onclick="openCertModal('network')">
-                    <div class="cert-icon">🐧</div>
-                    <h3>Linux Fundamentals</h3>
-                    <p class="issuer">Coursera & LearnQuest</p>
-                </div>
-
-                <div class="cert-card fade-in delay-3" onclick="openCertModal('gdpr')">
-                    <div class="cert-icon">⚖️</div>
-                    <h3>GDPR: Protecting Privacy Online</h3>
-                    <p class="issuer">Knowledge Accelerators</p>
-                </div>
+                <div class="cert-card fade-in delay-1" onclick="openCertModal('ceh')"><div class="cert-icon">🔒</div><h3>CEH</h3><p class="issuer">EC-Council</p></div>
+                <div class="cert-card fade-in delay-2" onclick="openCertModal('ccna')"><div class="cert-icon">🌐</div><h3>Networking Devices</h3><p class="issuer">Cisco</p></div>
+                <div class="cert-card fade-in delay-3" onclick="openCertModal('python1')"><div class="cert-icon">🐍</div><h3>Python Essentials 1</h3><p class="issuer">OpenEDG</p></div>
+                <div class="cert-card fade-in delay-1" onclick="openCertModal('python2')"><div class="cert-icon">🐍</div><h3>Python Essentials 2</h3><p class="issuer">OpenEDG</p></div>
+                <div class="cert-card fade-in delay-2" onclick="openCertModal('htmlcss')"><div class="cert-icon">🌐</div><h3>HTML & CSS Project</h3><p class="issuer">Coursera</p></div>
+                <div class="cert-card fade-in delay-3" onclick="openCertModal('cybersecurity')"><div class="cert-icon">🛡️</div><h3>Intro Cybersecurity</h3><p class="issuer">Cisco</p></div>
+                <div class="cert-card fade-in delay-1" onclick="openCertModal('netdefense')"><div class="cert-icon">🔐</div><h3>Network Defense</h3><p class="issuer">Cisco</p></div>
+                <div class="cert-card fade-in delay-2" onclick="openCertModal('cpp')"><div class="cert-icon">⚙️</div><h3>C++ Basics</h3><p class="issuer">Coursera</p></div>
+                <div class="cert-card fade-in delay-3" onclick="openCertModal('linux')"><div class="cert-icon">🐧</div><h3>Linux Fundamentals</h3><p class="issuer">LearnQuest</p></div>
+                <div class="cert-card fade-in delay-1" onclick="openCertModal('gdpr')"><div class="cert-icon">⚖️</div><h3>GDPR Privacy</h3><p class="issuer">Coursera</p></div>
+                <div class="cert-card fade-in delay-2" onclick="openCertModal('mongodb')"><div class="cert-icon">🗄️</div><h3>MongoDB PyMongo</h3><p class="issuer">Coursera</p></div>
+                <div class="cert-card fade-in delay-3" onclick="openCertModal('iso27001')"><div class="cert-icon">📋</div><h3>ISO 27001 Audit</h3><p class="issuer">Udemy</p></div>
+                <div class="cert-card fade-in delay-1" onclick="openCertModal('ethical_hacker_cisco')"><div class="cert-icon">🎯</div><h3>Ethical Hacker</h3><p class="issuer">Riphah/Cisco</p></div>
+                <div class="cert-card fade-in delay-2" onclick="openCertModal('netsupport')"><div class="cert-icon">🔧</div><h3>Net Support & Security</h3><p class="issuer">Riphah/Cisco</p></div>
+                <div class="cert-card fade-in delay-3" onclick="openCertModal('endpoint')"><div class="cert-icon">💻</div><h3>Endpoint Security</h3><p class="issuer">Riphah/Cisco</p></div>
+                <div class="cert-card fade-in delay-1" onclick="openCertModal('cpp_associate')"><div class="cert-icon">⚙️</div><h3>CPA: C++ Associate</h3><p class="issuer">Cisco</p></div>
+                <div class="cert-card fade-in delay-2" onclick="openCertModal('ethical_hacking_ehe')"><div class="cert-icon">🎯</div><h3>EHE Essentials</h3><p class="issuer">EC-Council</p></div>
+                <div class="cert-card fade-in delay-3" onclick="openCertModal('data_privacy')"><div class="cert-icon">🔐</div><h3>Data Privacy Fundamentals</h3><p class="issuer">Cognative</p></div>
             </div>
         </div>
     </section>
@@ -844,47 +946,110 @@
             ceh: {
                 title: 'CEH (Certified Ethical Hacker)',
                 issuer: 'EC-Council',
-                description: 'Certified Ethical Hacker credential from EC-Council demonstrating expertise in offensive security testing, penetration testing, and ethical hacking methodologies. Covers comprehensive penetration testing techniques, vulnerability assessment, and security analysis.'
+                date: 'Aug 2026 - Sep 2027',
+                description: 'Certified Ethical Hacker demonstrating expertise in offensive security testing, penetration testing, and ethical hacking methodologies. Comprehensive penetration testing techniques, vulnerability assessment, and security analysis. Credential ID: ECC3817509462'
             },
             ccna: {
                 title: 'Networking Devices & Initial Configuration',
                 issuer: 'Cisco Networking Academy',
-                description: 'Mastered network design components, IPv4 subnetting schemes, Ethernet operations in switched networks, DNS/DHCP services, ARP protocols, transport layer communications, and Cisco IOS device configuration. Foundation for network infrastructure security.'
+                date: 'Oct 15, 2024',
+                description: 'Network design components, decimal/binary/hexadecimal conversions, Ethernet operations in switched networks, DNS/DHCP services, ARP protocols, transport layer communications, and Cisco IOS device configuration. Foundation for network infrastructure security.'
             },
-            python: {
-                title: 'Python Essentials 1 & 2',
-                issuer: 'Cisco Networking Academy & OpenEDG',
-                description: 'Completed both levels: (1) Design, develop, debug, and execute Python 3 programs with standard library syntax; (2) Multi-module OOP programming with real-life problem modeling, IoT applications, and pursuit of PCEP/PCAP certifications for professional Python development.'
+            python1: {
+                title: 'Python Essentials 1',
+                issuer: 'Cisco & OpenEDG',
+                date: 'Mar 21, 2025',
+                description: 'Design, develop, debug, and execute Python 3 programs. Python Standard Library syntax, algorithmic thinking, and software development process. Prerequisite for PCEP - Certified Entry-Level Python Programmer.'
             },
-            datascience: {
-                title: 'HTML & CSS Portfolio Development',
+            python2: {
+                title: 'Python Essentials 2',
+                issuer: 'Cisco & OpenEDG',
+                date: 'Apr 15, 2025',
+                description: 'Multi-module Python programming with OOP principles. Real-life problem modeling in OOP categories, IoT applications, PCAP - Certified Associate in Python Programming certification pursuit.'
+            },
+            htmlcss: {
+                title: 'Build Your Portfolio Website (HTML & CSS)',
                 issuer: 'Coursera Project Network',
-                description: 'Completed hands-on project building portfolio websites using HTML and CSS. Practical skills in front-end web development, responsive design, and web application deployment. Applicable to security tool development and documentation.'
+                date: 'Jan 18, 2023',
+                description: 'Hands-on web development project building portfolio websites. Front-end development skills in responsive design and web application deployment. Applicable to security tool development and documentation.'
             },
             cybersecurity: {
                 title: 'Introduction to Cybersecurity',
                 issuer: 'Cisco Networking Academy',
-                description: 'Comprehensive introduction to cybersecurity fundamentals covering: online safety basics, common cyber threats and attacks, vulnerability identification, organizational defense mechanisms, and career pathways in cybersecurity. Issued Mar 2023.'
+                date: 'Mar 4, 2023',
+                description: 'Cybersecurity fundamentals: online safety, cyber threats and attacks, vulnerability protection, organizational defense mechanisms, and career pathways in cybersecurity. Entry-level foundation course.'
             },
-            database: {
+            netdefense: {
                 title: 'Network Defense',
                 issuer: 'Cisco Networking Academy',
-                description: 'Proficiency in network security posture configuration, security measure implementation on devices/endpoints, identity lifecycle management, firewall configuration, cloud security measures, PKI infrastructure, and virtual computing environments. Issued Oct 2024.'
+                date: 'Oct 16, 2024',
+                description: 'Network security posture documentation, security configuration on devices/endpoints, identity lifecycle management, firewall configuration, cloud security measures, PKI infrastructure, and virtual environments.'
             },
             cpp: {
                 title: 'C++ Basics: Selection & Iteration',
                 issuer: 'Coursera & Codio',
-                description: 'Completed foundational C++ programming course covering selection structures and iterative programming concepts. Practical knowledge applicable to systems programming, exploit development, and performance-critical security applications. Issued Jan 2023.'
+                date: 'Jan 27, 2023',
+                description: 'Foundational C++ programming covering selection structures and iterative programming. Applicable to systems programming, exploit development, and high-performance security tool development.'
             },
-            network: {
+            linux: {
                 title: 'Linux Fundamentals',
-                issuer: 'Coursera & LearnQuest (Simmons University)',
-                description: 'Completed comprehensive Linux fundamentals course covering operating system principles, command-line operations, and system administration. Essential foundation for cybersecurity work, penetration testing, and offensive security research. Issued Jan 2023.'
+                issuer: 'Coursera & LearnQuest',
+                date: 'Jan 25, 2023',
+                description: 'Linux operating system principles, command-line operations, and system administration. Essential for cybersecurity work, penetration testing, and offensive security research.'
             },
             gdpr: {
-                title: 'The ABC\'s of GDPR: Protecting Privacy',
+                title: 'GDPR: Protecting Privacy Online',
                 issuer: 'Coursera & Knowledge Accelerators',
-                description: 'Mastered GDPR regulations and privacy protection principles for online environments. Covers data protection compliance frameworks, privacy by design principles, and organizational requirements for protecting personal data. Critical for security and compliance roles. Issued Apr 2024.'
+                date: 'Apr 24, 2024',
+                description: 'GDPR regulations and privacy protection principles. Data protection compliance frameworks, privacy by design, consent management, and organizational requirements for protecting personal data.'
+            },
+            mongodb: {
+                title: 'Python MongoDB & PyMongo Project',
+                issuer: 'Coursera Project Network',
+                date: 'May 11, 2024',
+                description: 'Hands-on project creating Python applications with PyMongo and MongoDB database integration. Database programming, document-oriented design, and backend development skills.'
+            },
+            iso27001: {
+                title: 'ISO 27001:2022 Internal Audit',
+                issuer: 'Udemy',
+                date: 'Mar 15, 2026 (2.5 hrs)',
+                description: 'Information Security Management Systems (ISMS) compliance and internal audit procedures. ISO 27001:2022 standards, audit planning, and compliance reporting. Instructor: Dr. Amar Massoud.'
+            },
+            ethical_hacker_cisco: {
+                title: 'Ethical Hacker',
+                issuer: 'Riphah/Cisco Academy',
+                date: 'Apr 28, 2025',
+                description: 'Practical penetration testing and vulnerability assessment knowledge. Identify, exploit, and mitigate security flaws. Ethical hacking methodologies, legal frameworks, and responsible defense strengthening.'
+            },
+            netsupport: {
+                title: 'Network Support and Security',
+                issuer: 'Riphah/Cisco Academy',
+                date: 'Apr 21, 2025',
+                description: 'Network troubleshooting, support protocols, and security integration. Comprehensive network support with security awareness and incident handling.'
+            },
+            endpoint: {
+                title: 'Endpoint Security',
+                issuer: 'Riphah/Cisco Academy',
+                date: 'Apr 19, 2025',
+                description: 'Device protection against cyber threats. Securing endpoints, antivirus configuration, intrusion prevention, access controls, and policy application for desktops, laptops, and mobile devices.'
+            },
+            cpp_associate: {
+                title: 'CPA: Programming Essentials in C++',
+                issuer: 'Cisco Networking Academy',
+                date: 'Nov 2022 - Jan 2023',
+                description: 'Strong C++ programming foundation. Core concepts, syntax, problem-solving, and object-oriented programming. Prepares for CPA - C++ Certified Associate Programmer certification.'
+            },
+            ethical_hacking_ehe: {
+                title: 'Ethical Hacking Essentials (EHE)',
+                issuer: 'EC-Council via Coursera',
+                date: 'Apr 2023',
+                description: 'Foundational ethical hacking and cybersecurity. Penetration testing, vulnerability assessment, attack vectors, defense strategies, legal frameworks, and responsible practices.'
+            },
+            data_privacy: {
+                title: 'Data Privacy Fundamentals',
+                issuer: 'Cognative',
+                date: 'Oct 2024 - Oct 2025',
+                description: 'Data privacy principles and safeguarding strategies. Privacy laws, ethical practices, compliance requirements, consent management, and risk mitigation. Privacy awareness frameworks.'
             }
         };
 
@@ -892,9 +1057,11 @@
             const cert = certDetails[certId];
             if (cert) {
                 const modalBody = document.getElementById('modalBody');
+                let dateHTML = cert.date ? `<p style="color: var(--primary-color); margin-bottom: 0.5rem;"><strong>Date:</strong> ${cert.date}</p>` : '';
                 modalBody.innerHTML = `
                     <div class="modal-title">${cert.title}</div>
                     <p style="color: var(--text-light); margin-bottom: 1rem;"><strong>Issuer:</strong> ${cert.issuer}</p>
+                    ${dateHTML}
                     <p style="color: var(--text-dark); line-height: 1.8;">${cert.description}</p>
                 `;
                 document.getElementById('certModal').classList.add('active');
