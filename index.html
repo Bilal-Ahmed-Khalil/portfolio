@@ -1263,30 +1263,35 @@
                 title: 'CEH (Certified Ethical Hacker)',
                 issuer: 'EC-Council',
                 date: 'Aug 2026 - Sep 2027',
+                image: 'ceh.png',
                 description: 'Certified Ethical Hacker demonstrating expertise in offensive security testing, penetration testing, and ethical hacking methodologies. Comprehensive penetration testing techniques, vulnerability assessment, and security analysis. Credential ID: ECC3817509462'
             },
             ccna: {
                 title: 'Networking Devices & Initial Configuration',
                 issuer: 'Cisco Networking Academy',
                 date: 'Oct 15, 2024',
+                image: 'networking.png',
                 description: 'Network design components, decimal/binary/hexadecimal conversions, Ethernet operations in switched networks, DNS/DHCP services, ARP protocols, transport layer communications, and Cisco IOS device configuration. Foundation for network infrastructure security.'
             },
             python1: {
                 title: 'Python Essentials 1',
                 issuer: 'Cisco & OpenEDG',
                 date: 'Mar 21, 2025',
+                image: 'python1.png',
                 description: 'Design, develop, debug, and execute Python 3 programs. Python Standard Library syntax, algorithmic thinking, and software development process. Prerequisite for PCEP - Certified Entry-Level Python Programmer.'
             },
             python2: {
                 title: 'Python Essentials 2',
                 issuer: 'Cisco & OpenEDG',
                 date: 'Apr 15, 2025',
+                image: 'python2.png',
                 description: 'Multi-module Python programming with OOP principles. Real-life problem modeling in OOP categories, IoT applications, PCAP - Certified Associate in Python Programming certification pursuit.'
             },
             htmlcss: {
                 title: 'Build Your Portfolio Website (HTML & CSS)',
                 issuer: 'Coursera Project Network',
                 date: 'Jan 18, 2023',
+                image: 'html.png',
                 description: 'Hands-on web development project building portfolio websites. Front-end development skills in responsive design and web application deployment. Applicable to security tool development and documentation.'
             },
             cybersecurity: {
@@ -1299,54 +1304,63 @@
                 title: 'Network Defense',
                 issuer: 'Cisco Networking Academy',
                 date: 'Oct 16, 2024',
+                image: 'netdefense.png',
                 description: 'Network security posture documentation, security configuration on devices/endpoints, identity lifecycle management, firewall configuration, cloud security measures, PKI infrastructure, and virtual environments.'
             },
             cpp: {
                 title: 'C++ Basics: Selection & Iteration',
                 issuer: 'Coursera & Codio',
                 date: 'Jan 27, 2023',
+                image: 'cpp.png',
                 description: 'Foundational C++ programming covering selection structures and iterative programming. Applicable to systems programming, exploit development, and high-performance security tool development.'
             },
             linux: {
                 title: 'Linux Fundamentals',
                 issuer: 'Coursera & LearnQuest',
                 date: 'Jan 25, 2023',
+                image: 'linux.png',
                 description: 'Linux operating system principles, command-line operations, and system administration. Essential for cybersecurity work, penetration testing, and offensive security research.'
             },
             gdpr: {
                 title: 'GDPR: Protecting Privacy Online',
                 issuer: 'Coursera & Knowledge Accelerators',
                 date: 'Apr 24, 2024',
+                image: 'gdpr.png',
                 description: 'GDPR regulations and privacy protection principles. Data protection compliance frameworks, privacy by design, consent management, and organizational requirements for protecting personal data.'
             },
             mongodb: {
                 title: 'Python MongoDB & PyMongo Project',
                 issuer: 'Coursera Project Network',
                 date: 'May 11, 2024',
+                image: 'mongodb.png',
                 description: 'Hands-on project creating Python applications with PyMongo and MongoDB database integration. Database programming, document-oriented design, and backend development skills.'
             },
             iso27001: {
                 title: 'ISO 27001:2022 Internal Audit',
                 issuer: 'Udemy',
                 date: 'Mar 15, 2026 (2.5 hrs)',
+                image: 'iso27001.png',
                 description: 'Information Security Management Systems (ISMS) compliance and internal audit procedures. ISO 27001:2022 standards, audit planning, and compliance reporting. Instructor: Dr. Amar Massoud.'
             },
             ethical_hacker_cisco: {
                 title: 'Ethical Hacker',
                 issuer: 'Riphah/Cisco Academy',
                 date: 'Apr 28, 2025',
+                image: 'ethical_hacker.png',
                 description: 'Practical penetration testing and vulnerability assessment knowledge. Identify, exploit, and mitigate security flaws. Ethical hacking methodologies, legal frameworks, and responsible defense strengthening.'
             },
             netsupport: {
                 title: 'Network Support and Security',
                 issuer: 'Riphah/Cisco Academy',
                 date: 'Apr 21, 2025',
+                image: 'netsupport.png',
                 description: 'Network troubleshooting, support protocols, and security integration. Comprehensive network support with security awareness and incident handling.'
             },
             endpoint: {
                 title: 'Endpoint Security',
                 issuer: 'Riphah/Cisco Academy',
                 date: 'Apr 19, 2025',
+                image: 'endpoint.png',
                 description: 'Device protection against cyber threats. Securing endpoints, antivirus configuration, intrusion prevention, access controls, and policy application for desktops, laptops, and mobile devices.'
             },
             cpp_associate: {
@@ -1373,11 +1387,13 @@
             const cert = certDetails[certId];
             if (cert) {
                 const modalBody = document.getElementById('modalBody');
-                let dateHTML = cert.date ? `<p style="color: var(--primary-color); margin-bottom: 0.5rem;"><strong>Date:</strong> ${cert.date}</p>` : '';
+                let dateHTML = cert.date ? `<p style="color: var(--primary-color); margin-bottom: 1rem;"><strong>Date:</strong> ${cert.date}</p>` : '';
+                let certImage = cert.image ? `<img src="certificates/${cert.image}" style="width: 100%; max-width: 600px; border-radius: 0.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="${cert.title}">` : '';
                 modalBody.innerHTML = `
                     <div class="modal-title">${cert.title}</div>
                     <p style="color: var(--text-light); margin-bottom: 1rem;"><strong>Issuer:</strong> ${cert.issuer}</p>
                     ${dateHTML}
+                    ${certImage}
                     <p style="color: var(--text-dark); line-height: 1.8;">${cert.description}</p>
                 `;
                 document.getElementById('certModal').classList.add('active');
