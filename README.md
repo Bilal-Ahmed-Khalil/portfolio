@@ -2,7 +2,7 @@
 
 Professional portfolio showcasing academic publications, certifications, professional experience, and security research expertise.
 
-## 🎯 Features
+## Features
 
 - **Professional Design**: Modern, responsive portfolio website
 - **Publications Showcase**: Featured research papers in security
@@ -13,7 +13,7 @@ Professional portfolio showcasing academic publications, certifications, profess
 - **Social Links**: Direct links to GitHub and email
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 
-## 📋 What's Included
+## What's Included
 
 ```
 portfolio/
@@ -23,7 +23,7 @@ portfolio/
 └── certificates/       # Your certificate files (ready to reference)
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### View Locally
 1. Open `index.html` in any modern web browser
@@ -51,7 +51,7 @@ portfolio/
    - Set source to "main" branch / root folder
    - Your portfolio will be live at: `https://YOUR_USERNAME.github.io/portfolio/`
 
-## 📱 Sections
+## Sections
 
 - **Hero**: Introduction with call-to-action buttons
 - **Publications**: Your peer-reviewed research papers
@@ -59,7 +59,7 @@ portfolio/
 - **Certifications**: Professional certifications and training
 - **Contact**: Social media and email links
 
-## 🎨 Customization
+## Customization
 
 The portfolio uses CSS custom properties for easy theming. To customize:
 
@@ -71,37 +71,37 @@ The portfolio uses CSS custom properties for easy theming. To customize:
 Example color changes:
 ```css
 :root {
-    --primary-color: #2563eb;      /* Blue accent */
-    --accent-red: #dc2626;          /* Red highlight */
+    --primary-color: #05AD98;      /* Teal accent */
+    --page-bg: #E6E9E8;            /* Page background */
     /* ...more variables */
 }
 ```
 
-## 📚 Additional Resources
+## Additional Resources
 
 - **Publications**: 
   - MEMORYRIFT: https://ijournalar.com/site/index.php/ijar/article/view/405
   - SMOKESCREEN: https://ijournalar.com/site/index.php/ijar/article/view/838
 - **GitHub**: https://github.com/Bilal-Ahmed-Khalil/
 
-## ✨ Features Implemented
+## Features Implemented
 
-- ✅ Responsive design (mobile-first)
-- ✅ Smooth scrolling navigation
-- ✅ Hover animations and transitions
-- ✅ Fade-in animations on scroll
-- ✅ Publication card with links
-- ✅ Skills organized by category
-- ✅ Certificate cards with icons
-- ✅ Social media integration
-- ✅ Professional color scheme
-- ✅ Modern typography
+- Responsive design (mobile-first)
+- Smooth scrolling navigation
+- Hover animations and transitions
+- Smooth scrolling with scroll-linked card animations
+- Publication card with links
+- Skills organized by category
+- Certificate cards with official certificate images
+- Social media integration
+- Professional color scheme
+- Modern typography
 
-## 📞 Contact
+## Contact
 
-- **Email**: www.bilalahmedkhalil123456789@gmail.com
+- **Email**: bilalahmedkhalil05@gmail.com
 - **GitHub**: https://github.com/Bilal-Ahmed-Khalil/
 
-## 📄 License
+## License
 
 © 2026 Bilal Ahmed Khalil. All rights reserved.
