@@ -1667,10 +1667,8 @@
                 const col = index % cols;
                 const row = Math.floor(index / cols);
                 const middle = (cols - 1) / 2;
-                const left = cols === 1 ? index % 2 === 0
-                    : col === middle ? row % 2 === 0
-                    : col < middle;
-                card.classList.add('reveal', left ? 'from-left' : 'from-right');
+                const left = col === middle ? row % 2 === 0 : col < middle;
+                card.classList.add('reveal', cols === 1 ? 'from-below' : left ? 'from-left' : 'from-right');
                 els.push(card);
             });
             document.querySelectorAll('section h2, .social-links, #contact .container > p').forEach(el => {
