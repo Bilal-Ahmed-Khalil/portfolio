@@ -19,18 +19,6 @@ Professional portfolio showcasing academic publications, certifications, profess
   - SMOKESCREEN: https://ijournalar.com/site/index.php/ijar/article/view/838
 - **GitHub**: https://github.com/Bilal-Ahmed-Khalil/
 
-## Features Implemented
-
-- Responsive design (mobile-first)
-- Smooth scrolling navigation
-- Hover animations and transitions
-- Smooth scrolling with scroll-linked card animations
-- Publication card with links
-- Skills organized by category
-- Certificate cards with official certificate images
-- Social media integration
-- Professional color scheme
-- Modern typography
 
 ## Contact
 
