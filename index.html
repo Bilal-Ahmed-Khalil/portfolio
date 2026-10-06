@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilal Ahmed Khalil - Security Researcher & Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #64748b;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --accent-red: #dc2626;
+            --accent-green: #16a34a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero .bio {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            background: var(--bg-white);
+            margin: 2rem 0;
+            border-radius: 1rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            text-align: center;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-red));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Publications */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-left-color: var(--accent-red);
+        }
+
+        .publication-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .publication-card .authors {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .publication-card .date {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .publication-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .publication-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .publication-links a:hover {
+            color: var(--accent-red);
+            transform: translateX(2px);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cert-card:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.02);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cert-card .issuer {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-red);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem 0;
+                margin: 1rem 0;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .publications-grid,
+            .skills-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">BAK</a>
+                <ul class="nav-links">
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Bilal Ahmed Khalil</h1>
+            <p class="subtitle">Security Researcher & Developer</p>
+            <p class="bio">
+                Cybersecurity specialist and published researcher focused on offensive security,
+                exploit analysis, and defensive security frameworks. Experienced in Windows buffer overflow,
+                memory corruption analysis, and honeypot architectures.
+            </p>
+            <div class="cta-buttons">
+                <a href="#publications" class="btn btn-primary">View My Work</a>
+                <a href="https://github.com/Bilal-Ahmed-Khalil/" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Publications -->
+    <section id="publications">
+        <div class="container">
+            <h2>Academic Publications</h2>
+            <div class="publications-grid">
+                <div class="publication-card fade-in delay-1">
+                    <h3>MEMORYRIFT</h3>
+                    <p style="font-style: italic; color: var(--primary-color); margin-bottom: 0.5rem;">
+                        An Offensive Security Framework for Windows Buffer Overflow and Post-Exploitation Analysis
+                    </p>
+                    <p class="authors">
+                        Authors: <strong>Bilal Ahmed Khalil</strong>, Hammad Ahmad, Dr. Jawaid Iqbal
+                    </p>
+                    <span class="date">August 2026</span>
+                    <p>
+                        This research focuses on exploit analysis, memory corruption, Windows x86/x64 buffer overflow,
+                        control flow hijacking, shellcode injection, and post-exploitation security controls testing.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://ijournalar.com/site/index.php/ijar/article/view/405" target="_blank">
+                            📄 Read Paper
+                        </a>
+                        <a href="https://ijournalar.com/site/index.php/ijar/article/view/405" target="_blank">
+                            🔗 Official Record
+                        </a>
+                    </div>
+                </div>
+
+                <div class="publication-card fade-in delay-2">
+                    <h3>SMOKESCREEN</h3>
+                    <p style="font-style: italic; color: var(--primary-color); margin-bottom: 0.5rem;">
+                        An Active Multi-Layered Honeypot Framework with Hybrid Detection and Dynamic Redirection
+                    </p>
+                    <p class="authors">
+                        Authors: Hammad Ahmad, <strong>Bilal Ahmed Khalil</strong>, Dr. Jawaid Iqbal
+                    </p>
+                    <span class="date">September 2026</span>
+                    <p>
+                        This framework covers active cyber defense, deception security, dynamic honeypot architectures,
+                        hybrid threat detection, automated traffic diversion, and threat intelligence gathering.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://ijournalar.com/site/index.php/ijar/article/view/838" target="_blank">
+                            📄 Read Paper
+                        </a>
+                        <a href="https://ijournalar.com/site/index.php/ijar/article/view/838" target="_blank">
+                            🔗 Official Record
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in delay-1">
+                    <h3>🔐 Security & Exploitation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Buffer Overflow</span>
+                        <span class="skill-tag">Exploit Development</span>
+                        <span class="skill-tag">Memory Analysis</span>
+                        <span class="skill-tag">Shellcode Injection</span>
+                        <span class="skill-tag">Honeypots</span>
+                        <span class="skill-tag">Threat Analysis</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in delay-2">
+                    <h3>💻 Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Linux Shell</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in delay-3">
+                    <h3>🛠️ Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Kali Linux</span>
+                        <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">GDB/LLDB</span>
+                        <span class="skill-tag">IDA Pro</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in delay-1">
+                    <h3>📚 Other Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">GDPR Compliance</span>
+                        <span class="skill-tag">Cyber Defense</span>
+                        <span class="skill-tag">CCNA</span>
+                        <span class="skill-tag">Operating Systems</span>
+                        <span class="skill-tag">Data Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+        <div class="container">
+            <h2>Professional Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-card fade-in delay-1">
+                    <div class="cert-icon">🔒</div>
+                    <h3>CEH (Certified Ethical Hacker)</h3>
+                    <p class="issuer">EC-Council</p>
+                </div>
+
+                <div class="cert-card fade-in delay-2">
+                    <div class="cert-icon">🌐</div>
+                    <h3>CCNA Networking</h3>
+                    <p class="issuer">Cisco</p>
+                </div>
+
+                <div class="cert-card fade-in delay-3">
+                    <div class="cert-icon">🐍</div>
+                    <h3>Python Essentials</h3>
+                    <p class="issuer">Cisco Networking Academy</p>
+                </div>
+
+                <div class="cert-card fade-in delay-1">
+                    <div class="cert-icon">📊</div>
+                    <h3>Data Science Fundamentals</h3>
+                    <p class="issuer">Fireside Analytics Inc.</p>
+                </div>
+
+                <div class="cert-card fade-in delay-2">
+                    <div class="cert-icon">🛡️</div>
+                    <h3>Cybersecurity Essentials</h3>
+                    <p class="issuer">Cisco Networking Academy</p>
+                </div>
+
+                <div class="cert-card fade-in delay-3">
+                    <div class="cert-icon">💾</div>
+                    <h3>Database Management</h3>
+                    <p class="issuer">Various Platforms</p>
+                </div>
+
+                <div class="cert-card fade-in delay-1">
+                    <div class="cert-icon">📱</div>
+                    <h3>C++ Programming</h3>
+                    <p class="issuer">Coursera & Cisco</p>
+                </div>
+
+                <div class="cert-card fade-in delay-2">
+                    <div class="cert-icon">📜</div>
+                    <h3>Network Technician</h3>
+                    <p class="issuer">Cisco Networking Academy</p>
+                </div>
+
+                <div class="cert-card fade-in delay-3">
+                    <div class="cert-icon">⚖️</div>
+                    <h3>GDPR Compliance</h3>
+                    <p class="issuer">Coursera</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container" style="text-align: center;">
+            <h2>Get In Touch</h2>
+            <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem;">
+                Connect with me on my professional platforms
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/Bilal-Ahmed-Khalil/" target="_blank" title="GitHub">
+                    <span>👨‍💻</span>
+                </a>
+                <a href="https://www.linkedin.com/in/bilal-ahmed-khalil/" target="_blank" title="LinkedIn">
+                    <span>💼</span>
+                </a>
+                <a href="mailto:www.bilalahmedkhalil123456789@gmail.com" title="Email">
+                    <span>📧</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bilal Ahmed Khalil. All rights reserved.</p>
+            <p>Security Researcher | Developer | Published Author</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('.publication-card, .cert-card, .skill-category').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
