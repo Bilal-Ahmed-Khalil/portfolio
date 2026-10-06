@@ -1,6 +1,6 @@
 # Bilal Ahmed Khalil - Security Researcher Portfolio
 
-A professional web-based portfolio showcasing academic publications, technical skills, and certifications in cybersecurity and offensive security research.
+Professional portfolio showcasing academic publications, certifications, professional experience, and security research expertise.
 
 ## 🎯 Features
 

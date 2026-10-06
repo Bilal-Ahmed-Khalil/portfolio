@@ -313,22 +313,37 @@
 
         .cert-card {
             background: var(--bg-light);
-            padding: 2rem;
             border-radius: 1rem;
             text-align: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 300px;
         }
 
         .cert-card:hover {
             border-color: var(--primary-color);
             transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        .cert-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .cert-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-red));
+        }
+
+        .cert-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
         }
 
         .cert-card h3 {
@@ -577,6 +592,24 @@
             font-size: 0.85rem;
             font-weight: 600;
             display: inline-block;
+        }
+
+        .exp-certs {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .exp-certs img {
+            transition: transform 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .exp-certs img:hover {
+            transform: scale(1.1);
         }
 
         .exp-period {
@@ -903,6 +936,11 @@
                     <p class="exp-period">May 2026 - Present • 6 months</p>
                     <p class="exp-location">🏢 Rawalpindi, Punjab, Pakistan • On-site</p>
                     <p class="exp-description">Security engineering role focusing on enterprise security operations, threat detection, and infrastructure security assessments. Working with modern security frameworks and implementing security controls across organizational systems.</p>
+                    <div class="exp-certs">
+                        <img src="certificates/ceh.png" alt="CEH" title="Certified Ethical Hacker" style="width: 60px; height: 60px; border-radius: 0.5rem; margin: 0.5rem;">
+                        <img src="certificates/netdefense.png" alt="Network Defense" title="Network Defense" style="width: 60px; height: 60px; border-radius: 0.5rem; margin: 0.5rem;">
+                        <img src="certificates/iso27001.png" alt="ISO 27001" title="ISO 27001" style="width: 60px; height: 60px; border-radius: 0.5rem; margin: 0.5rem;">
+                    </div>
                 </div>
 
                 <div class="experience-card fade-in delay-2">
@@ -921,6 +959,11 @@
                             <li>Strengthened expertise in SOC operations and threat detection</li>
                             <li>Supported incident response and threat investigation workflows</li>
                         </ul>
+                    </div>
+                    <div class="exp-certs">
+                        <img src="certificates/endpoint.png" alt="Endpoint Security" title="Endpoint Security" style="width: 60px; height: 60px; border-radius: 0.5rem; margin: 0.5rem;">
+                        <img src="certificates/netdefense.png" alt="Network Defense" title="Network Defense" style="width: 60px; height: 60px; border-radius: 0.5rem; margin: 0.5rem;">
+                        <img src="certificates/ethical_hacker.png" alt="Ethical Hacker" title="Ethical Hacker" style="width: 60px; height: 60px; border-radius: 0.5rem; margin: 0.5rem;">
                     </div>
                 </div>
 
@@ -943,6 +986,11 @@
                             <li>Wi-Fi security evaluation (WEP, WPA, WPA2, WPA3)</li>
                             <li>CCTV security vulnerability assessment</li>
                         </ul>
+                    </div>
+                    <div class="exp-certs">
+                        <img src="certificates/ethical_hacker.png" alt="Ethical Hacker" title="Ethical Hacker" style="width: 60px; height: 60px; border-radius: 0.5rem; margin: 0.5rem;">
+                        <img src="certificates/linux.png" alt="Linux Fundamentals" title="Linux Fundamentals" style="width: 60px; height: 60px; border-radius: 0.5rem; margin: 0.5rem;">
+                        <img src="certificates/netsupport.png" alt="Network Support" title="Network Support" style="width: 60px; height: 60px; border-radius: 0.5rem; margin: 0.5rem;">
                     </div>
                 </div>
             </div>
@@ -997,26 +1045,7 @@
     <section id="certifications">
         <div class="container">
             <h2>Professional Certifications</h2>
-            <div class="certifications-grid">
-                <div class="cert-card fade-in delay-1" onclick="openCertModal('ceh')"><div class="cert-icon">🔒</div><h3>CEH</h3><p class="issuer">EC-Council</p></div>
-                <div class="cert-card fade-in delay-2" onclick="openCertModal('ccna')"><div class="cert-icon">🌐</div><h3>Networking Devices</h3><p class="issuer">Cisco</p></div>
-                <div class="cert-card fade-in delay-3" onclick="openCertModal('python1')"><div class="cert-icon">🐍</div><h3>Python Essentials 1</h3><p class="issuer">OpenEDG</p></div>
-                <div class="cert-card fade-in delay-1" onclick="openCertModal('python2')"><div class="cert-icon">🐍</div><h3>Python Essentials 2</h3><p class="issuer">OpenEDG</p></div>
-                <div class="cert-card fade-in delay-2" onclick="openCertModal('htmlcss')"><div class="cert-icon">🌐</div><h3>HTML & CSS Project</h3><p class="issuer">Coursera</p></div>
-                <div class="cert-card fade-in delay-3" onclick="openCertModal('cybersecurity')"><div class="cert-icon">🛡️</div><h3>Intro Cybersecurity</h3><p class="issuer">Cisco</p></div>
-                <div class="cert-card fade-in delay-1" onclick="openCertModal('netdefense')"><div class="cert-icon">🔐</div><h3>Network Defense</h3><p class="issuer">Cisco</p></div>
-                <div class="cert-card fade-in delay-2" onclick="openCertModal('cpp')"><div class="cert-icon">⚙️</div><h3>C++ Basics</h3><p class="issuer">Coursera</p></div>
-                <div class="cert-card fade-in delay-3" onclick="openCertModal('linux')"><div class="cert-icon">🐧</div><h3>Linux Fundamentals</h3><p class="issuer">LearnQuest</p></div>
-                <div class="cert-card fade-in delay-1" onclick="openCertModal('gdpr')"><div class="cert-icon">⚖️</div><h3>GDPR Privacy</h3><p class="issuer">Coursera</p></div>
-                <div class="cert-card fade-in delay-2" onclick="openCertModal('mongodb')"><div class="cert-icon">🗄️</div><h3>MongoDB PyMongo</h3><p class="issuer">Coursera</p></div>
-                <div class="cert-card fade-in delay-3" onclick="openCertModal('iso27001')"><div class="cert-icon">📋</div><h3>ISO 27001 Audit</h3><p class="issuer">Udemy</p></div>
-                <div class="cert-card fade-in delay-1" onclick="openCertModal('ethical_hacker_cisco')"><div class="cert-icon">🎯</div><h3>Ethical Hacker</h3><p class="issuer">Riphah/Cisco</p></div>
-                <div class="cert-card fade-in delay-2" onclick="openCertModal('netsupport')"><div class="cert-icon">🔧</div><h3>Net Support & Security</h3><p class="issuer">Riphah/Cisco</p></div>
-                <div class="cert-card fade-in delay-3" onclick="openCertModal('endpoint')"><div class="cert-icon">💻</div><h3>Endpoint Security</h3><p class="issuer">Riphah/Cisco</p></div>
-                <div class="cert-card fade-in delay-1" onclick="openCertModal('cpp_associate')"><div class="cert-icon">⚙️</div><h3>CPA: C++ Associate</h3><p class="issuer">Cisco</p></div>
-                <div class="cert-card fade-in delay-2" onclick="openCertModal('ethical_hacking_ehe')"><div class="cert-icon">🎯</div><h3>EHE Essentials</h3><p class="issuer">EC-Council</p></div>
-                <div class="cert-card fade-in delay-3" onclick="openCertModal('data_privacy')"><div class="cert-icon">🔐</div><h3>Data Privacy Fundamentals</h3><p class="issuer">Cognative</p></div>
-            </div>
+            <div class="certifications-grid" id="certGrid"></div>
         </div>
     </section>
 
@@ -1383,6 +1412,35 @@
             }
         };
 
+        // Render certificate cards with images
+        function renderCertificateCards() {
+            const certGrid = document.getElementById('certGrid');
+            if (!certGrid) return;
+
+            const certOrder = ['ceh', 'ccna', 'python1', 'python2', 'htmlcss', 'cybersecurity', 'netdefense', 'cpp', 'linux', 'gdpr', 'mongodb', 'iso27001', 'ethical_hacker_cisco', 'netsupport', 'endpoint', 'cpp_associate', 'ethical_hacking_ehe', 'data_privacy'];
+
+            certOrder.forEach((certId, index) => {
+                const cert = certDetails[certId];
+                if (cert) {
+                    const card = document.createElement('div');
+                    card.className = `cert-card fade-in delay-${((index % 3) + 1)}`;
+                    card.onclick = () => openCertModal(certId);
+
+                    const imageSrc = cert.image ? `certificates/${cert.image}` : '';
+                    const imageHTML = cert.image ? `<img src="${imageSrc}" alt="${cert.title}" class="cert-image" onerror="this.style.display='none'">` : '';
+
+                    card.innerHTML = `
+                        ${imageHTML}
+                        <div class="cert-info">
+                            <h3>${cert.title}</h3>
+                            <p class="issuer">${cert.issuer}</p>
+                        </div>
+                    `;
+                    certGrid.appendChild(card);
+                }
+            });
+        }
+
         function openCertModal(certId) {
             const cert = certDetails[certId];
             if (cert) {
@@ -1411,6 +1469,18 @@
                 closeCertModal();
             }
         });
+
+        // Render certificate cards on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCertificateCards();
+        });
+
+        // If DOM is already loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderCertificateCards);
+        } else {
+            renderCertificateCards();
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
