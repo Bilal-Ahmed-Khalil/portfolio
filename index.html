@@ -17,8 +17,9 @@
             --secondary-color: #878787;
             --text-dark: #2C2C2C;
             --text-light: #878787;
-            --bg-light: #F5F7F6;
+            --bg-light: #FAFBFA;
             --bg-white: #FFFFFF;
+            --card-bg: #F8F9F8;
             --border-color: #BBBFBF;
             --accent-teal: #05AD98;
             --accent-gray: #878787;
@@ -131,40 +132,41 @@
         }
 
         .btn {
-            padding: 0.85rem 2.5rem;
+            padding: 0.6rem 1.8rem;
             border: none;
-            border-radius: 0.4rem;
-            font-size: 1rem;
+            border-radius: 0.35rem;
+            font-size: 0.95rem;
             cursor: pointer;
             text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            transition: all 0.25s ease;
             display: inline-block;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.2px;
         }
 
         .btn-primary {
             background: var(--primary-color);
             color: white;
-            box-shadow: 0 4px 12px rgba(5, 173, 152, 0.25);
+            box-shadow: 0 2px 8px rgba(5, 173, 152, 0.2);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(5, 173, 152, 0.35);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(5, 173, 152, 0.25);
         }
 
         .btn-secondary {
-            background: var(--light-gray);
+            background: var(--text-light);
             color: white;
+            box-shadow: 0 2px 8px rgba(135, 135, 135, 0.15);
         }
 
         .btn-secondary:hover {
-            background: var(--accent-gray);
+            background: var(--text-dark);
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(135, 135, 135, 0.25);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(135, 135, 135, 0.2);
         }
 
         @media (max-width: 768px) {
@@ -210,16 +212,16 @@
         }
 
         .publication-card {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: 1rem;
+            background: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 0.8rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
         .publication-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(5, 173, 152, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(5, 173, 152, 0.12);
         }
 
         .publication-card h3 {
@@ -252,23 +254,25 @@
 
         .publication-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
+            margin-top: 1rem;
         }
 
         .publication-links a {
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
+            gap: 0.4rem;
+            transition: all 0.25s ease;
+            position: relative;
         }
 
         .publication-links a:hover {
-            color: var(--accent-red);
+            color: var(--primary-dark);
             transform: translateX(2px);
         }
 
@@ -280,15 +284,15 @@
         }
 
         .skill-category {
-            background: var(--bg-light);
+            background: var(--card-bg);
             padding: 1.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
 
         .skill-category:hover {
-            box-shadow: 0 8px 20px rgba(5, 173, 152, 0.12);
+            box-shadow: 0 6px 16px rgba(5, 173, 152, 0.1);
             transform: translateY(-2px);
         }
 
@@ -321,21 +325,21 @@
         }
 
         .cert-card {
-            background: var(--bg-light);
-            border-radius: 1rem;
+            background: var(--card-bg);
+            border-radius: 0.8rem;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             cursor: pointer;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            height: 300px;
+            height: 280px;
         }
 
         .cert-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 28px rgba(5, 173, 152, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(5, 173, 152, 0.12);
         }
 
         .cert-image {
@@ -565,16 +569,16 @@
         }
 
         .experience-card {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
 
         .experience-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(5, 173, 152, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(5, 173, 152, 0.1);
         }
 
         .exp-header {
@@ -637,17 +641,17 @@
         }
 
         .interest-card {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: 1rem;
+            background: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 0.8rem;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
 
         .interest-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(5, 173, 152, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(5, 173, 152, 0.12);
         }
 
         .interest-icon {
@@ -693,15 +697,15 @@
 
         .logo-item {
             padding: 1.5rem;
-            background: var(--bg-light);
+            background: var(--card-bg);
             border-radius: 0.75rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
 
         .logo-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(5, 173, 152, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(5, 173, 152, 0.1);
         }
 
         .logo-text {
@@ -725,16 +729,16 @@
         }
 
         .project-card {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(5, 173, 152, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(5, 173, 152, 0.12);
         }
 
         .project-header {
@@ -758,14 +762,14 @@
             gap: 0.3rem;
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 0.9rem;
             white-space: nowrap;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .github-link:hover {
-            color: var(--accent-red);
+            color: var(--primary-dark);
             transform: translateX(2px);
         }
 
