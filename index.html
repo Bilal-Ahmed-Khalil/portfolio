@@ -698,6 +698,89 @@
             margin: 0;
         }
 
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-left-color: var(--accent-red);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+            gap: 1rem;
+        }
+
+        .project-header h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            color: var(--accent-red);
+            transform: translateX(2px);
+        }
+
+        .project-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0.25rem 0 1rem 0;
+        }
+
+        .project-desc {
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
         @media (max-width: 768px) {
             .exp-header {
                 flex-direction: column;
@@ -724,10 +807,10 @@
                 <ul class="nav-links">
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#interests">Interests</a></li>
-                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -1027,6 +1110,105 @@
         </div>
     </section>
 
+    <!-- Practical Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Practical Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in delay-1">
+                    <div class="project-header">
+                        <h3>SmokeScreen</h3>
+                        <a href="https://github.com/Bilal-Ahmed-Khalil/SmokeScreen" target="_blank" class="github-link">
+                            <span>🔗 Repository</span>
+                        </a>
+                    </div>
+                    <p class="project-subtitle">Deception & Detection Framework</p>
+                    <p class="project-desc">
+                        Real-time intrusion detection pipeline to identify reconnaissance and stealth-scanning patterns. Centralized dashboards for monitoring and threat intelligence. Multi-layered honeypot architecture for active cyber defense and automated threat detection.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Honeypot</span>
+                        <span class="project-tag">IDS</span>
+                        <span class="project-tag">Threat Detection</span>
+                        <span class="project-tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in delay-2">
+                    <div class="project-header">
+                        <h3>Evil Twin Attack Framework</h3>
+                        <a href="https://github.com/Bilal-Ahmed-Khalil/Evil-Twin" target="_blank" class="github-link">
+                            <span>🔗 Repository</span>
+                        </a>
+                    </div>
+                    <p class="project-subtitle">Vendor-Specific Wi-Fi Security Testing</p>
+                    <p class="project-desc">
+                        Automated Wi-Fi security testing tool with custom captive portals. Demonstrates strong practical grounding in network administration and protocol-level security. Tests wireless authentication mechanisms and network vulnerabilities.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Wi-Fi Security</span>
+                        <span class="project-tag">Penetration Testing</span>
+                        <span class="project-tag">Network Security</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in delay-3">
+                    <div class="project-header">
+                        <h3>Web Penetration Testing</h3>
+                        <a href="https://github.com/Bilal-Ahmed-Khalil/" target="_blank" class="github-link">
+                            <span>🔗 GitHub</span>
+                        </a>
+                    </div>
+                    <p class="project-subtitle">Multi-Application Vulnerability Assessment</p>
+                    <p class="project-desc">
+                        Conducted penetration testing across multiple web applications, identifying vulnerabilities in authentication, input validation, and session management. Documented remediation recommendations and coordinated fixes with development teams.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Web Security</span>
+                        <span class="project-tag">OWASP</span>
+                        <span class="project-tag">Bug Bounty</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in delay-1">
+                    <div class="project-header">
+                        <h3>VulnHub & HTB Exploitation</h3>
+                        <a href="https://github.com/Bilal-Ahmed-Khalil/" target="_blank" class="github-link">
+                            <span>🔗 Portfolio</span>
+                        </a>
+                    </div>
+                    <p class="project-subtitle">30+ Machine Exploitation & Privilege Escalation</p>
+                    <p class="project-desc">
+                        Compromised and rooted 30+ VulnHub and HackTheBox machines through privilege escalation, buffer overflow exploitation, and web application vulnerabilities. Reflects strong analytical and problem-solving ability under pressure.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Exploit Dev</span>
+                        <span class="project-tag">Priv Escalation</span>
+                        <span class="project-tag">CTF</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in delay-2">
+                    <div class="project-header">
+                        <h3>Windows Forensics & Memory Analysis</h3>
+                        <a href="https://github.com/Bilal-Ahmed-Khalil/" target="_blank" class="github-link">
+                            <span>🔗 GitHub</span>
+                        </a>
+                    </div>
+                    <p class="project-subtitle">Malware Analysis & Incident Response</p>
+                    <p class="project-desc">
+                        Performed memory forensics on infected systems, analyzing malware artifacts, process injection, and persistence mechanisms. Strengthened endpoint security and Windows internals expertise through practical incident response scenarios.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Forensics</span>
+                        <span class="project-tag">Malware Analysis</span>
+                        <span class="project-tag">Windows Internals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container" style="text-align: center;">
@@ -1055,35 +1237,6 @@
                 </a>
             </div>
 
-            <div class="official-logos" style="margin-top: 3rem; border-top: 2px solid var(--border-color); padding-top: 2rem;">
-                <h3 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 1rem;">Official Credentials & Affiliations</h3>
-                <div class="logos-grid">
-                    <div class="logo-item">
-                        <div class="logo-text">EC-Council</div>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">CEH Certified</p>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-text">Cisco</div>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">Networking Academy</p>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-text">OpenEDG</div>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">Python Institute</p>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-text">Riphah</div>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">International University</p>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-text">Coursera</div>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">Project Network</p>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-text">Darktrace</div>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">MSSP Partner</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
