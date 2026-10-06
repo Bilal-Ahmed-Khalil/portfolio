@@ -1002,8 +1002,6 @@
                 box-shadow 0.45s var(--ease-out);
         }
 
-        .js .reveal.from-left { --rx: -90px; }
-        .js .reveal.from-right { --rx: 90px; }
         .js .reveal.from-below { --rx: 0; }
         .js .reveal.from-above { --ry: -48px; }
 
@@ -1779,19 +1777,7 @@
             const cardSelector = '.publication-card, .experience-card, .project-card, .skill-category, .cert-card, .interest-card, .education-info';
             const els = [];
 
-            document.querySelectorAll(cardSelector).forEach(card => {
-                const siblings = Array.from(card.parentElement.children).filter(el => el.matches(cardSelector));
-                const index = siblings.indexOf(card);
-                const template = getComputedStyle(card.parentElement).gridTemplateColumns;
-                const cols = template === 'none' ? 1 : template.split(' ').length;
-                const col = index % cols;
-                const row = Math.floor(index / cols);
-                const middle = (cols - 1) / 2;
-                const left = col === middle ? row % 2 === 0 : col < middle;
-                card.classList.add('reveal', cols === 1 ? 'from-below' : left ? 'from-left' : 'from-right');
-                els.push(card);
-            });
-            document.querySelectorAll('section h2, .social-links, #contact .container > p').forEach(el => {
+            document.querySelectorAll(`${cardSelector}, section h2, .social-links, #contact .container > p`).forEach(el => {
                 el.classList.add('reveal', 'from-below');
                 els.push(el);
             });
