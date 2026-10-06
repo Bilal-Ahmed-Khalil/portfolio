@@ -1295,13 +1295,6 @@
                 image: 'ceh.png',
                 description: 'Certified Ethical Hacker demonstrating expertise in offensive security testing, penetration testing, and ethical hacking methodologies. Comprehensive penetration testing techniques, vulnerability assessment, and security analysis. Credential ID: ECC3817509462'
             },
-            cpa: {
-                title: 'CPA: Programming Essentials in C++',
-                issuer: 'Cisco Networking Academy',
-                date: 'Nov 2022 - Jan 2023',
-                image: 'cpp_associate.png',
-                description: 'Strong C++ programming foundation. Core concepts, syntax, problem-solving, and object-oriented programming. Prepares for CPA - C++ Certified Associate Programmer certification.'
-            },
             ccna: {
                 title: 'Networking Devices & Initial Configuration',
                 issuer: 'Cisco Networking Academy',
@@ -1379,13 +1372,6 @@
                 image: 'endpoint.png',
                 description: 'Device protection against cyber threats. Securing endpoints, antivirus configuration, intrusion prevention, access controls, and policy application for desktops, laptops, and mobile devices.'
             },
-            data_privacy: {
-                title: 'Data Privacy Fundamentals',
-                issuer: 'Cognative',
-                date: 'Oct 2024 - Oct 2025',
-                image: 'data_privacy.png',
-                description: 'Data privacy principles and safeguarding strategies. Privacy laws, ethical practices, compliance requirements, consent management, and risk mitigation. Privacy awareness frameworks.'
-            }
         };
 
         // Render certificate cards with images
@@ -1393,8 +1379,8 @@
             const certGrid = document.getElementById('certGrid');
             if (!certGrid) return;
 
-            // Only show unique certs, one per course provider
-            const certOrder = ['ceh', 'ccna', 'python2', 'htmlcss', 'netdefense', 'cpp', 'linux', 'gdpr', 'mongodb', 'iso27001', 'ethical_hacker_cisco', 'endpoint', 'cpa', 'data_privacy'];
+            // Only show real certificates with images - no duplicates
+            const certOrder = ['ceh', 'ccna', 'python2', 'htmlcss', 'netdefense', 'cpp', 'linux', 'gdpr', 'mongodb', 'iso27001', 'ethical_hacker_cisco', 'endpoint'];
 
             certOrder.forEach((certId, index) => {
                 const cert = certDetails[certId];
