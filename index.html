@@ -102,8 +102,15 @@
 
         .hero .subtitle {
             font-size: 1.3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             opacity: 0.95;
+        }
+
+        .hero .job-title {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 500;
         }
 
         .hero .bio {
@@ -428,6 +435,116 @@
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .modal-close {
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--accent-red);
+        }
+
+        .modal-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            clear: both;
+        }
+
+        .cert-card {
+            cursor: pointer;
+        }
+
+        .cert-card:hover {
+            cursor: pointer;
+        }
+
+        /* Education Section */
+        .education-info {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .education-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .education-detail h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .education-detail p {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-detail .label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: normal;
+        }
+
+        .gpa-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 95%;
+                padding: 1.5rem;
+            }
+
+            .education-header {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -440,6 +557,7 @@
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -450,11 +568,13 @@
     <div class="hero">
         <div class="container">
             <h1>Bilal Ahmed Khalil</h1>
-            <p class="subtitle">Security Researcher & Developer</p>
+            <p class="subtitle">Security Engineer | Offensive Security Researcher</p>
+            <p class="job-title">Security Engineer at <strong>Enabling Systems</strong> ✓ Verified</p>
             <p class="bio">
                 Cybersecurity specialist and published researcher focused on offensive security,
                 exploit analysis, and defensive security frameworks. Experienced in Windows buffer overflow,
-                memory corruption analysis, and honeypot architectures.
+                memory corruption analysis, and honeypot architectures. Bachelor of Science in Cyber Security
+                from Riphah International University (CGPA: 3.91).
             </p>
             <div class="cta-buttons">
                 <a href="#publications" class="btn btn-primary">View My Work</a>
@@ -578,59 +698,96 @@
         <div class="container">
             <h2>Professional Certifications</h2>
             <div class="certifications-grid">
-                <div class="cert-card fade-in delay-1">
+                <div class="cert-card fade-in delay-1" onclick="openCertModal('ceh')">
                     <div class="cert-icon">🔒</div>
                     <h3>CEH (Certified Ethical Hacker)</h3>
                     <p class="issuer">EC-Council</p>
                 </div>
 
-                <div class="cert-card fade-in delay-2">
+                <div class="cert-card fade-in delay-2" onclick="openCertModal('ccna')">
                     <div class="cert-icon">🌐</div>
                     <h3>CCNA Networking</h3>
                     <p class="issuer">Cisco</p>
                 </div>
 
-                <div class="cert-card fade-in delay-3">
+                <div class="cert-card fade-in delay-3" onclick="openCertModal('python')">
                     <div class="cert-icon">🐍</div>
                     <h3>Python Essentials</h3>
                     <p class="issuer">Cisco Networking Academy</p>
                 </div>
 
-                <div class="cert-card fade-in delay-1">
+                <div class="cert-card fade-in delay-1" onclick="openCertModal('datascience')">
                     <div class="cert-icon">📊</div>
                     <h3>Data Science Fundamentals</h3>
                     <p class="issuer">Fireside Analytics Inc.</p>
                 </div>
 
-                <div class="cert-card fade-in delay-2">
+                <div class="cert-card fade-in delay-2" onclick="openCertModal('cybersecurity')">
                     <div class="cert-icon">🛡️</div>
                     <h3>Cybersecurity Essentials</h3>
                     <p class="issuer">Cisco Networking Academy</p>
                 </div>
 
-                <div class="cert-card fade-in delay-3">
+                <div class="cert-card fade-in delay-3" onclick="openCertModal('database')">
                     <div class="cert-icon">💾</div>
                     <h3>Database Management</h3>
                     <p class="issuer">Various Platforms</p>
                 </div>
 
-                <div class="cert-card fade-in delay-1">
+                <div class="cert-card fade-in delay-1" onclick="openCertModal('cpp')">
                     <div class="cert-icon">📱</div>
                     <h3>C++ Programming</h3>
                     <p class="issuer">Coursera & Cisco</p>
                 </div>
 
-                <div class="cert-card fade-in delay-2">
+                <div class="cert-card fade-in delay-2" onclick="openCertModal('network')">
                     <div class="cert-icon">📜</div>
                     <h3>Network Technician</h3>
                     <p class="issuer">Cisco Networking Academy</p>
                 </div>
 
-                <div class="cert-card fade-in delay-3">
+                <div class="cert-card fade-in delay-3" onclick="openCertModal('gdpr')">
                     <div class="cert-icon">⚖️</div>
                     <h3>GDPR Compliance</h3>
                     <p class="issuer">Coursera</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-info">
+                <div class="education-header">
+                    <div class="education-detail">
+                        <h3>Degree</h3>
+                        <p>Bachelor of Science in Cyber Security</p>
+                        <p class="label">Riphah International University, Islamabad, Pakistan</p>
+                    </div>
+                    <div class="education-detail">
+                        <h3>Academic Performance</h3>
+                        <p><span class="gpa-badge">CGPA: 3.91</span></p>
+                        <p class="label">Completed: 10 July 2026</p>
+                    </div>
+                </div>
+                <div class="education-header">
+                    <div class="education-detail">
+                        <h3>Admission</h3>
+                        <p>01 September 2022</p>
+                        <p class="label">Registration No: F22C04U89011</p>
+                    </div>
+                    <div class="education-detail">
+                        <h3>Credits</h3>
+                        <p>130 Credit Hours</p>
+                        <p class="label">Earned & Completed</p>
+                    </div>
+                </div>
+                <p style="color: var(--text-light); margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                    <strong>Specialized in:</strong> Cybersecurity, Offensive Security, Buffer Overflow Analysis,
+                    Exploit Development, Network Security, Cyber Forensics, and Malware Analysis
+                </p>
             </div>
         </div>
     </section>
@@ -643,18 +800,35 @@
                 Connect with me on my professional platforms
             </p>
             <div class="social-links">
-                <a href="https://github.com/Bilal-Ahmed-Khalil/" target="_blank" title="GitHub">
+                <a href="https://github.com/Bilal-Ahmed-Khalil/" target="_blank" title="GitHub Profile">
                     <span>👨‍💻</span>
+                </a>
+                <a href="https://github.com/Bilal-Ahmed-Khalil/SmokeScreen" target="_blank" title="SmokeScreen Repository">
+                    <span>🔥</span>
                 </a>
                 <a href="https://www.linkedin.com/in/bilal-ahmed-khalil/" target="_blank" title="LinkedIn">
                     <span>💼</span>
                 </a>
-                <a href="mailto:www.bilalahmedkhalil123456789@gmail.com" title="Email">
+                <a href="https://orcid.org/0009-0002-2756-2962" target="_blank" title="ORCID Profile">
+                    <span>🆔</span>
+                </a>
+                <a href="https://www.researchgate.net/profile/Bilal-Ahmed-Khalil" target="_blank" title="ResearchGate">
+                    <span>📚</span>
+                </a>
+                <a href="mailto:bilalahmedkhalil05@gmail.com" title="Email">
                     <span>📧</span>
                 </a>
             </div>
         </div>
     </section>
+
+    <!-- Certificate Modals -->
+    <div id="certModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeCertModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -665,6 +839,80 @@
     </footer>
 
     <script>
+        // Certificate details
+        const certDetails = {
+            ceh: {
+                title: 'CEH (Certified Ethical Hacker)',
+                issuer: 'EC-Council',
+                description: 'Certified Ethical Hacker credential demonstrating expertise in offensive security testing, penetration testing, and ethical hacking methodologies. Covers footprinting, scanning, enumeration, exploitation, and post-exploitation techniques.'
+            },
+            ccna: {
+                title: 'CCNA Networking',
+                issuer: 'Cisco',
+                description: 'Cisco Certified Network Associate certification covering networking fundamentals, routing, switching, and network troubleshooting. Essential foundation for understanding network infrastructure and security.'
+            },
+            python: {
+                title: 'Python Essentials 1 & 2',
+                issuer: 'Cisco Networking Academy',
+                description: 'Comprehensive Python programming certification covering basic and intermediate programming concepts. Applicable to security scripting, automation, and data analysis tasks.'
+            },
+            datascience: {
+                title: 'Data Science Fundamentals',
+                issuer: 'Fireside Analytics Inc.',
+                description: 'Certification in data science principles and analytics. Useful for threat intelligence analysis, security data analysis, and research data interpretation.'
+            },
+            cybersecurity: {
+                title: 'Cybersecurity Essentials',
+                issuer: 'Cisco Networking Academy',
+                description: 'Introduction to cybersecurity concepts, network defense, common threats, and security best practices. Foundation for career in cybersecurity field.'
+            },
+            database: {
+                title: 'Database Management',
+                issuer: 'Various Platforms',
+                description: 'Database design, management, and security. Covers SQL, MongoDB, and database security principles essential for securing data infrastructure.'
+            },
+            cpp: {
+                title: 'C++ Programming',
+                issuer: 'Coursera & Cisco',
+                description: 'Advanced programming certification in C++. Applicable to exploit development, systems programming, and high-performance security tools.'
+            },
+            network: {
+                title: 'Network Technician Career Path',
+                issuer: 'Cisco Networking Academy',
+                description: 'Comprehensive network technician training covering network devices configuration, network troubleshooting, and network security fundamentals.'
+            },
+            gdpr: {
+                title: 'GDPR Compliance',
+                issuer: 'Coursera',
+                description: 'Data protection and compliance certification covering GDPR regulations, data privacy principles, and compliance frameworks. Essential for handling sensitive data securely.'
+            }
+        };
+
+        function openCertModal(certId) {
+            const cert = certDetails[certId];
+            if (cert) {
+                const modalBody = document.getElementById('modalBody');
+                modalBody.innerHTML = `
+                    <div class="modal-title">${cert.title}</div>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;"><strong>Issuer:</strong> ${cert.issuer}</p>
+                    <p style="color: var(--text-dark); line-height: 1.8;">${cert.description}</p>
+                `;
+                document.getElementById('certModal').classList.add('active');
+            }
+        }
+
+        function closeCertModal() {
+            document.getElementById('certModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('certModal');
+            if (event.target === modal) {
+                closeCertModal();
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
