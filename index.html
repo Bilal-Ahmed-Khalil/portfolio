@@ -607,6 +607,63 @@
             margin-bottom: 0.4rem;
         }
 
+        /* Interests Section */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .interest-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .interest-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .interest-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .interest-card h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .interest-desc {
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .interest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .interest-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
         @media (max-width: 768px) {
             .exp-header {
                 flex-direction: column;
@@ -635,6 +692,7 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#interests">Interests</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -853,6 +911,47 @@
                 <div class="cert-card fade-in delay-1" onclick="openCertModal('cpp_associate')"><div class="cert-icon">⚙️</div><h3>CPA: C++ Associate</h3><p class="issuer">Cisco</p></div>
                 <div class="cert-card fade-in delay-2" onclick="openCertModal('ethical_hacking_ehe')"><div class="cert-icon">🎯</div><h3>EHE Essentials</h3><p class="issuer">EC-Council</p></div>
                 <div class="cert-card fade-in delay-3" onclick="openCertModal('data_privacy')"><div class="cert-icon">🔐</div><h3>Data Privacy Fundamentals</h3><p class="issuer">Cognative</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests & Hobbies Section -->
+    <section id="interests">
+        <div class="container">
+            <h2>Interests & Hobbies</h2>
+            <div class="interests-grid">
+                <div class="interest-card fade-in delay-1">
+                    <div class="interest-icon">🏸</div>
+                    <h3>Badminton</h3>
+                    <p class="interest-desc">Passionate badminton player with extensive experience in local tournaments. Competitive player focusing on technique, strategy, and team coordination. Active participation in community and inter-university championships.</p>
+                    <div class="interest-tags">
+                        <span class="interest-tag">Tournament Player</span>
+                        <span class="interest-tag">Local Competitions</span>
+                        <span class="interest-tag">Team Sports</span>
+                    </div>
+                </div>
+
+                <div class="interest-card fade-in delay-2">
+                    <div class="interest-icon">🔬</div>
+                    <h3>Cybersecurity Research</h3>
+                    <p class="interest-desc">Deep interest in offensive security, exploit development, and red teaming. Published researcher in buffer overflow and honeypot technologies. Continuous pursuit of advanced security knowledge through hands-on labs and experimentation.</p>
+                    <div class="interest-tags">
+                        <span class="interest-tag">Exploit Development</span>
+                        <span class="interest-tag">Red Teaming</span>
+                        <span class="interest-tag">Security Research</span>
+                    </div>
+                </div>
+
+                <div class="interest-card fade-in delay-3">
+                    <div class="interest-icon">💻</div>
+                    <h3>Software Development</h3>
+                    <p class="interest-desc">Enthusiast in building security tools, automation scripts, and backend systems. Experience with multiple programming languages and full-stack development. Interest in combining security with application design.</p>
+                    <div class="interest-tags">
+                        <span class="interest-tag">Security Tools</span>
+                        <span class="interest-tag">Automation</span>
+                        <span class="interest-tag">Full-Stack</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
